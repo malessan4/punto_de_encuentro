@@ -1,64 +1,153 @@
-import Image from "next/image";
+import React from 'react';
+import { MoveRight, AudioWaveform, Mic2, Users, Mail, BookOpen, Music4 } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-[#0a0a0a] text-neutral-200 font-sans selection:bg-teal-500/30">
+      
+      {/* NAV BAR */}
+      <nav className="fixed top-0 w-full z-50 border-b border-neutral-800 bg-[#0a0a0a]/80 backdrop-blur-md">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="text-xl font-bold tracking-tighter text-neutral-100 flex items-center gap-2">
+            <AudioWaveform className="w-6 h-6 text-teal-400" />
+            <span>Punto de Encuentro_</span>
+          </div>
+          <div className="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
+            <a href="#proyecto" className="hover:text-teal-400 transition-colors">Proyecto</a>
+            <a href="#lineas" className="hover:text-teal-400 transition-colors">Investigación</a>
+            <a href="#equipo" className="hover:text-teal-400 transition-colors">Equipo</a>
+            <a href="#contacto" className="hover:text-teal-400 transition-colors">Contacto</a>
+          </div>
+        </div>
+      </nav>
+
+      <main className="max-w-6xl mx-auto px-6 pt-32 pb-20">
+        
+        {/* HERO SECTION */}
+        <section className="py-20 md:py-32 flex flex-col items-start gap-6 border-b border-neutral-800">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900 text-xs text-teal-400 uppercase tracking-widest font-semibold">
+            Investigación Universitaria
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl">
+            Música Electroacústica <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-600">
+              en Argentina.
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl text-neutral-400 max-w-2xl leading-relaxed">
+            Un espacio de convergencia entre la tradición experimental, 
+            el análisis morfológico y la composición contemporánea académica.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <div className="flex gap-4 mt-4">
+            <a 
+              href="#proyecto" 
+              className="group flex items-center gap-2 bg-neutral-100 text-black px-6 py-3 rounded-md font-medium hover:bg-teal-400 transition-all duration-300"
+            >
+              Leer Propuesta <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
+            </a>
+            <a 
+              href="#contacto" 
+              className="flex items-center gap-2 px-6 py-3 rounded-md font-medium border border-neutral-700 hover:border-teal-400 hover:text-teal-400 transition-all"
+            >
+              Contactar
+            </a>
+          </div>
+        </section>
+
+        {/* SECTION: PROYECTO */}
+        <section id="proyecto" className="py-24 grid md:grid-cols-2 gap-16 items-center border-b border-neutral-800">
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-white flex items-center gap-3">
+              <BookOpen className="text-teal-400" /> Sobre el Proyecto
+            </h2>
+            <p className="text-neutral-400 text-lg leading-relaxed">
+              <strong>Punto de Encuentro</strong> nace como una iniciativa académica para relevar, 
+              analizar y difundir las obras electroacústicas producidas en el ámbito universitario nacional.
+            </p>
+            <p className="text-neutral-400 text-lg leading-relaxed">
+              Buscamos trazar un mapa sonoro que conecte los hitos históricos 
+              (LIPM, CLAEM) con las nuevas producciones de estudiantes y docentes investigadores.
+            </p>
+          </div>
+          
+          {/* Visual abstracta (simulando código o espectrograma) */}
+          <div className="relative h-64 md:h-80 w-full bg-neutral-900 rounded-lg border border-neutral-800 overflow-hidden flex items-center justify-center group">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+            <div className="z-10 text-center space-y-2 p-6">
+               <Music4 className="w-16 h-16 mx-auto text-neutral-700 group-hover:text-teal-400 transition-colors duration-500" />
+               <p className="text-sm text-neutral-600 font-mono">freq: 440hz // amp: 0.8</p>
+               <p className="text-xs text-neutral-700 font-mono">render_audio_stream()</p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION: LÍNEAS DE INVESTIGACIÓN */}
+        <section id="lineas" className="py-24 border-b border-neutral-800">
+          <h2 className="text-3xl font-bold text-white mb-12">Líneas de Investigación</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            
+            {/* Card 1 */}
+            <div className="p-8 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-teal-500/50 transition-colors duration-300">
+              <div className="w-12 h-12 bg-neutral-800 rounded-lg flex items-center justify-center mb-6 text-teal-400">
+                <AudioWaveform className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Sintaxis Sonora</h3>
+              <p className="text-neutral-400">Análisis morfológico de obras mixtas y acusmáticas argentinas del siglo XXI.</p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="p-8 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-teal-500/50 transition-colors duration-300">
+              <div className="w-12 h-12 bg-neutral-800 rounded-lg flex items-center justify-center mb-6 text-teal-400">
+                <Mic2 className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Tecnología y Medios</h3>
+              <p className="text-neutral-400">Desarrollo de instrumentos digitales y programación en entornos como SuperCollider y Max/MSP.</p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="p-8 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-teal-500/50 transition-colors duration-300">
+              <div className="w-12 h-12 bg-neutral-800 rounded-lg flex items-center justify-center mb-6 text-teal-400">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Archivo Histórico</h3>
+              <p className="text-neutral-400">Recuperación y digitalización de cintas y soportes analógicos de compositores locales.</p>
+            </div>
+
+          </div>
+        </section>
+
+        {/* SECTION: EQUIPO (Minimalista estilo lista) */}
+        <section id="equipo" className="py-24 border-b border-neutral-800">
+          <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+             <Users className="text-teal-400"/> Equipo de Investigación
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[1, 2, 3, 4].map((item) => (
+              <div key={item} className="flex items-center gap-4 p-4 rounded-lg hover:bg-neutral-900 transition-colors border border-transparent hover:border-neutral-800">
+                <div className="w-12 h-12 rounded-full bg-neutral-800 border border-neutral-700"></div>
+                <div>
+                  <h4 className="text-white font-medium">Investigador {item}</h4>
+                  <p className="text-sm text-neutral-500">Rol Académico / Especialidad</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer id="contacto" className="pt-20 pb-10 text-center space-y-8">
+          <h3 className="text-2xl font-bold text-white">¿Te interesa colaborar?</h3>
+          <p className="text-neutral-400">
+            Proyecto radicado en la Universidad Nacional de las Artes (Ejemplo)
+          </p>
+          <div className="flex justify-center items-center gap-2 text-teal-400 font-mono">
+            <Mail className="w-4 h-4" /> contacto@puntodeencuentro.edu.ar
+          </div>
+          <div className="pt-10 border-t border-neutral-800 text-xs text-neutral-600">
+            &copy; {new Date().getFullYear()} Punto de Encuentro. Investigación Musical.
+          </div>
+        </footer>
+
       </main>
     </div>
   );
