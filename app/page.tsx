@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { MoveRight, AudioWaveform, Mic2, Users, Mail, BookOpen, Music4 } from 'lucide-react';
 
 export default function Home() {
@@ -8,10 +9,21 @@ export default function Home() {
       {/* NAV BAR */}
       <nav className="fixed top-0 w-full z-50 border-b border-neutral-800 bg-[#0a0a0a]/80 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="text-xl font-bold tracking-tighter text-neutral-100 flex items-center gap-2">
-            <AudioWaveform className="w-6 h-6 text-teal-400" />
-            <span>Punto de Encuentro_</span>
-          </div>
+
+          {/* LOGO + NOMBRE */}
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="relative w-30 h-30"> 
+               <Image 
+                 src="/imagenes/pprof-logo-blanco.png"       // Asegúrate de que coincida con el nombre en la carpeta public
+                 alt="Logo Punto de Encuentro"
+                 fill                  // Esto hace que la imagen llene el contenedor div padre
+                 className="object-contain group-hover:scale-105 transition-transform" // object-contain evita que se deforme
+                 priority              // Carga prioritaria para el logo
+               />
+            </div>
+
+
+          </a>
           <div className="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
             <a href="#proyecto" className="hover:text-teal-400 transition-colors">Proyecto</a>
             <a href="#lineas" className="hover:text-teal-400 transition-colors">Investigación</a>
@@ -29,14 +41,20 @@ export default function Home() {
             Investigación Universitaria
           </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl">
-            Música Electroacústica <br />
+            Punto de Encuentro <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-600">
-              en Argentina.
+              Música Electroacústica
             </span>
           </h1>
           <p className="text-xl text-neutral-400 max-w-2xl leading-relaxed">
-            Un espacio de convergencia entre la tradición experimental, 
-            el análisis morfológico y la composición contemporánea académica.
+              Punto de Encuentro es un Proyecto de Investigación Orientado
+              a la Práctica Profesional de la Escuela Universitaria de Artes de la Universidad Nacional de Quilmes 
+              dirigido por Marcos Franciosi y co-dirigido por Agustina Crespo
+          </p>
+          <br>
+          </br>
+          <p className="text-xl text-neutral-400 max-w-2xl leading-relaxed">
+            Nuevos abordajes para el trabajo en colaboración entre compositores e intérpretes en el ámbito universitario.
           </p>
           <div className="flex gap-4 mt-4">
             <a 
@@ -61,12 +79,11 @@ export default function Home() {
               <BookOpen className="text-teal-400" /> Sobre el Proyecto
             </h2>
             <p className="text-neutral-400 text-lg leading-relaxed">
-              <strong>Punto de Encuentro</strong> nace como una iniciativa académica para relevar, 
-              analizar y difundir las obras electroacústicas producidas en el ámbito universitario nacional.
+              <strong>Punto de Encuentro:</strong> Somos un grupo de estudio formado por estudiantes, docentes y egresados de la carrera de Composición con Medios Electroacústicos.
             </p>
             <p className="text-neutral-400 text-lg leading-relaxed">
-              Buscamos trazar un mapa sonoro que conecte los hitos históricos 
-              (LIPM, CLAEM) con las nuevas producciones de estudiantes y docentes investigadores.
+                Nuestro objetivo es abordar los mecanismos de aprendizaje y producción de la composición musical a 
+                partir del trabajo colaborativo entre intérpretes y compositores en el campo de la música contemporánea.
             </p>
           </div>
           
