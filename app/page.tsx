@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { MoveRight, AudioWaveform, Mic2, Users, Mail, BookOpen, Music4 } from 'lucide-react';
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
             <a href="#proyecto" className="hover:text-teal-400 transition-colors">Proyecto</a>
             <a href="#lineas" className="hover:text-teal-400 transition-colors">Investigación</a>
             <a href="#equipo" className="hover:text-teal-400 transition-colors">Equipo</a>
-            <a href="#contacto" className="hover:text-teal-400 transition-colors">Contacto</a>
+            <Link href="/contacto" className="hover:text-teal-400 transition-colors">Contacto</Link>
           </div>
         </div>
       </nav>
@@ -63,12 +64,12 @@ export default function Home() {
             >
               Leer Propuesta <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
             </a>
-            <a 
-              href="#contacto" 
+            <Link 
+              href="/contacto" 
               className="flex items-center gap-2 px-6 py-3 rounded-md font-medium border border-neutral-700 hover:border-teal-400 hover:text-teal-400 transition-all"
             >
               Contactar
-            </a>
+            </Link>
           </div>
         </section>
 
