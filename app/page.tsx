@@ -86,6 +86,17 @@ export default function Home() {
                 Nuestro objetivo es abordar los mecanismos de aprendizaje y producción de la composición musical a 
                 partir del trabajo colaborativo entre intérpretes y compositores en el campo de la música contemporánea.
             </p>
+
+            <div className="pt-4">
+              <Link 
+                href="/proyecto" 
+                className="inline-flex items-center gap-2 text-teal-400 font-medium hover:text-white transition-colors group"
+              >
+                Ver más sobre el proyecto
+                <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            
           </div>
           
           {/* Visual abstracta (simulando código o espectrograma) */}
